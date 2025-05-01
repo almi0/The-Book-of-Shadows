@@ -3,9 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The book of shadows</title>
+    <link rel="stylesheet" href="./style.css">
+    
 </head>
 <body>
-    
+    <div class="book-container" id="bookContainer">
+        <div class="book" id="book">
+            <div class="page left" id="leftPage" data-page="0">
+                <h2>Оглавление</h2>
+                <p>kzkzkz</p>
+            </div>
+            <div class="page right" id="rightPage" data-page="1">
+                <h2>Предисловие</h2>
+            </div>
+            <div class="page left" data-page="2" style="display: none;">
+                <h2>Оккультизм</h2>
+            </div>
+            <div class="page right" data-page="3" style="display: none;">
+                <h2>История возникновения</h2>
+            </div>
+            <div class="page left" data-page="4" style="display: none;">
+                <h2>ведьмовство</h2>
+            </div>
+            <div class="page right" data-page="5" style="display: none;">
+                <h2>История возникновения</h2>
+            </div>
+
+        </div>
+
+        <div class="click-zone left-zone" onclick="prevPage()"></div>
+        <div class="click-zone right-zone" onclick="nextPage()"></div>
+    </div>
+
+    <script src="./script.js" defer></script>
 </body>
 </html>
