@@ -1,281 +1,80 @@
-// let currentPage = 0;
-
-// function updatePages() {
-//     const book = document.getElementById("book");
-//     const allPages = document.querySelectorAll(".page");
-
-//     book.style.transform = `rotateY(${-180 * currentPage}deg)`;
-
-//     allPages.forEach(page => page.style.display = "none");
-
-//     const leftPage = document.querySelector(`.page.left[data-page='${currentPage}']`);
-//     if (leftPage) leftPage.style.display = "block";
-
-//     const rightPage = document.querySelector(`.page.right[data-page='${currentPage + 1}']`);
-//     if (rightPage) rightPage.style.display = "block";
-// }
-
-// function prevPage() {
-//     if (currentPage > 0) {
-//         currentPage--;
-//         updatePages();
-//     }
-// }
-
-// function nextPage() {
-//     const totalPages = Math.max(...Array.from(document.querySelectorAll(".page")).map(p => parseInt(p.getAttribute("data-page"))));
-//     if (currentPage < totalPages - 1) {
-//         currentPage++;
-//         updatePages();
-//     }
-// }
-
-// updatePages()
-
-
-// let currentPage = 0;
-
-// function updatePages() {
-//   const book = document.getElementById("book");
-//   const allPages = document.querySelectorAll(".page");
-
-//   // Анимация поворота
-//   book.style.transform = `rotateY(${-180 * currentPage}deg)`;
-
-//   // Скрываем все страницы
-//   allPages.forEach(page => page.style.display = "none");
-
-//   // Показываем текущую левую
-//   const leftPage = document.querySelector(`.page.left[data-page='${currentPage}']`);
-//   if (leftPage) leftPage.style.display = "block";
-
-//   // Показываем следующую правую
-//   const rightPage = document.querySelector(`.page.right[data-page='${currentPage + 1}']`);
-//   if (rightPage) rightPage.style.display = "block";
-// }
-
-// function prevPage() {
-//   if (currentPage > 0) {
-//     currentPage--;
-//     updatePages();
-//   }
-// }
-
-// function nextPage() {
-//   const totalPages = Math.max(...Array.from(document.querySelectorAll(".page")).map(p => parseInt(p.getAttribute("data-page"))));
-//   if (currentPage < totalPages - 1) {
-//     currentPage++;
-//     updatePages();
-//   }
-// }
-
-// // Запускаем при загрузке
-// document.addEventListener("DOMContentLoaded", function () {
-//   updatePages();
-// });
-
-
-
-
-
-// let currentPage = 0; // Теперь это номер главы
-
-// function updatePages() {
-//   const book = document.getElementById("book");
-//   const allPages = document.querySelectorAll(".page");
-
-//   // Анимация поворота книги
-//   book.style.transform = `rotateY(${-180 * currentPage}deg)`;
-
-//   // Скрываем все страницы
-//   allPages.forEach(page => page.style.display = "none");
-
-//   // Номера страниц для текущей главы
-//   const leftPageNum = currentPage * 2;
-//   const rightPageNum = currentPage * 2 + 1;
-
-//   // Ищем нужные страницы
-//   const leftPage = document.querySelector(`.page.left[data-page='${leftPageNum}']`);
-//   const rightPage = document.querySelector(`.page.right[data-page='${rightPageNum}']`);
-
-//   // Показываем их
-//   if (leftPage) leftPage.style.display = "block";
-//   if (rightPage) rightPage.style.display = "block";
-// }
-
-// // Перелистнуть назад
-// function prevPage() {
-//   if (currentPage > 0) {
-//     currentPage--;
-//     updatePages();
-//   }
-// }
-
-// // Перелистнуть вперёд
-// function nextPage() {
-//   const totalPages = Math.max(...Array.from(document.querySelectorAll(".page")).map(p => parseInt(p.getAttribute("data-page"))));
-//   const maxChapter = Math.floor(totalPages / 2) - 1;
-
-//   if (currentPage < maxChapter) {
-//     currentPage++;
-//     updatePages();
-//   }
-// }
-
-// console.log('currentPage:', currentPage);
-// console.log('leftPage:', document.querySelector(`.page.left[data-page='${currentPage * 2}']`));
-// console.log('rightPage:', document.querySelector(`.page.right[data-page='${currentPage * 2 + 1}']`));
-
-// console.log('currentPage:', currentPage);
-// console.log('Ищу левую:', currentPage * 2);
-// console.log('Ищу правую:', currentPage * 2 + 1);
-
-
-// console.log('До клика currentPage =', currentPage);
-// console.log('После клика currentPage =', currentPage);
-
-
-
-
-
-
-
-
-// // Запускаем при загрузке
-// document.addEventListener("DOMContentLoaded", function () {
-//   updatePages();
-// });
-
-
-
-
-
-
-// let currentPage = 0;
-
-// function updatePages() {
-//   const book = document.getElementById("book");
-//   const allPages = document.querySelectorAll(".page");
-
-//   // Анимация поворота
-//   book.style.transform = `rotateY(${-180 * currentPage}deg)`;
-
-//   // Скрываем все страницы
-//   allPages.forEach(page => page.style.display = "none");
-
-//   // Номера текущих страниц
-//   const leftPageNum = currentPage * 2;
-//   const rightPageNum = currentPage * 2 + 1;
-
-//   // Находим и показываем нужные
-//   const leftPage = document.querySelector(`.page.left[data-page='${leftPageNum}']`);
-//   const rightPage = document.querySelector(`.page.right[data-page='${rightPageNum}']`);
-
-//   if (leftPage) leftPage.style.display = "block";
-//   if (rightPage) rightPage.style.display = "block";
-
-//   console.log('Текущая глава:', currentPage);
-// }
-
-// // Перелистывание
-// function prevPage() {
-//   if (currentPage > 0) {
-//     currentPage--;
-//     updatePages();
-//   }
-// }
-
-// function nextPage() {
-//   console.log('Клик на кнопку Вперёд');
-
-//   const totalPages = Math.max(
-//     ...Array.from(document.querySelectorAll(".page")).map(p =>
-//       parseInt(p.getAttribute("data-page"))
-//     )
-//   );
-
-//   const maxChapter = Math.floor((totalPages - 1) / 2);
-
-//   console.log('maxChapter:', maxChapter);
-//   console.log('currentPage до:', currentPage);
-
-//   if (currentPage < maxChapter) {
-//     currentPage++;
-//     console.log('currentPage после:', currentPage);
-//     updatePages();
-//   } else {
-//     console.log('Вы достигли последней главы');
-//   }
-// }
-
-// // Запуск при загрузке
-// document.addEventListener("DOMContentLoaded", function () {
-//   updatePages();
-// });
-
-
-
-
-
 let currentPage = 0;
+const totalPages = document.querySelectorAll(".page-spread").length;
 
-function updatePages() {
-  const book = document.getElementById("book");
-  const allPages = document.querySelectorAll(".page");
+function showCurrentSpread() {
+  const spreads = document.querySelectorAll(".page-spread");
 
-  // Анимация поворота
-  book.style.transform = `rotateY(${-180 * currentPage}deg)`;
+  // Убираем класс active со всех разворотов
+  spreads.forEach((spread, index) => {
+    spread.classList.remove("active");
+  });
 
-  // Скрываем все страницы
-  allPages.forEach(page => page.style.display = "none");
+  // Добавляем класс active к текущему развороту
+  spreads[currentPage].classList.add("active");
 
-  // Номера текущих страниц
-  const leftPageNum = currentPage * 2;
-  const rightPageNum = currentPage * 2 + 1;
-
-  // Находим и показываем нужные
-  const leftPage = document.querySelector(`.page.left[data-page='${leftPageNum}']`);
-  const rightPage = document.querySelector(`.page.right[data-page='${rightPageNum}']`);
-
-  if (leftPage) leftPage.style.display = "block";
-  if (rightPage) rightPage.style.display = "block";
-
-  console.log('Текущая глава:', currentPage);
+  // Сбрасываем анимацию переворота
+  const pages = spreads[currentPage].querySelectorAll(".page");
+  pages.forEach(page => {
+    page.classList.remove("flipped-left", "flipped-right");
+  });
 }
 
-// Перелистывание назад
-function prevPage() {
-  if (currentPage > 0) {
-    currentPage--;
-    updatePages();
-  }
+function animatePageFlip(page, animationClass) {
+  return new Promise((resolve) => {
+    page.classList.add(animationClass); // Запускаем анимацию переворота
+    setTimeout(() => {
+      resolve(); // Разрешаем промис после завершения анимации
+    }, 1200); // Время анимации (1.2s)
+  });
 }
 
-// Перелистывание вперёд
-function nextPage() {
-  console.log('Клик на кнопку Вперёд');
+async function nextPage() {
+  if (currentPage < totalPages - 1) {
+    const currentSpread = document.querySelectorAll(".page-spread")[currentPage];
+    const rightPage = currentSpread.querySelector(".right"); // Правая страница
 
-  const totalPages = Math.max(
-    ...Array.from(document.querySelectorAll(".page")).map(p =>
-      parseInt(p.getAttribute("data-page"))
-    )
-  );
+    // Убираем текст перед анимацией
+    rightPage.classList.remove("active");
 
-  const maxChapter = Math.floor((totalPages - 1) / 2); // ← ИСПРАВЛЕНИЕ
+    // Запускаем анимацию переворота влево
+    await animatePageFlip(rightPage, "flipped-left");
 
-  console.log('maxChapter:', maxChapter);
-  console.log('currentPage до:', currentPage);
-
-  if (currentPage < maxChapter) {
+    // Переходим к следующему развороту
     currentPage++;
-    console.log('currentPage после:', currentPage);
-    updatePages();
-  } else {
-    console.log('Вы достигли последней главы');
+    showCurrentSpread();
+
+    // Делаем текст видимым на обеих страницах одновременно
+    const activePages = document.querySelectorAll(".page-spread.active .page");
+    activePages.forEach(page => {
+      page.classList.add("active"); // Показываем текст на текущей странице
+    });
   }
 }
 
-// Запуск при загрузке
-document.addEventListener("DOMContentLoaded", function () {
-  updatePages();
+async function prevPage() {
+  if (currentPage > 0) {
+    const currentSpread = document.querySelectorAll(".page-spread")[currentPage];
+    const leftPage = currentSpread.querySelector(".left"); // Левая страница
+
+    // Убираем текст перед анимацией
+    leftPage.classList.remove("active");
+
+    // Запускаем анимацию переворота вправо
+    await animatePageFlip(leftPage, "flipped-right");
+
+    // Переходим к предыдущему развороту
+    currentPage--;
+    showCurrentSpread();
+
+    // Делаем текст видимым на обеих страницах одновременно
+    const activePages = document.querySelectorAll(".page-spread.active .page");
+    activePages.forEach(page => {
+      page.classList.add("active"); // Показываем текст на текущей странице
+    });
+  }
+}
+
+// Инициализация
+document.addEventListener("DOMContentLoaded", () => {
+  showCurrentSpread();
 });
