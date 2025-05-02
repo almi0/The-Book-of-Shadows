@@ -3,9 +3,13 @@ const totalPages = document.querySelectorAll(".page-spread").length;
 
 function showCurrentSpread() {
   const spreads = document.querySelectorAll(".page-spread");
+
+  // Убираем класс active со всех разворотов
   spreads.forEach((spread, index) => {
     spread.classList.remove("active");
   });
+
+  // Добавляем класс active к текущему развороту
   spreads[currentPage].classList.add("active");
 
   // Сбрасываем анимацию переворота
@@ -13,49 +17,60 @@ function showCurrentSpread() {
   pages.forEach(page => {
     page.classList.remove("flipped-left", "flipped-right");
   });
-
-  // Делаем текст видимым
-  setTimeout(() => {
-    const activePages = spreads[currentPage].querySelectorAll(".page");
-    activePages.forEach(page => {
-      page.classList.add("active"); // Показываем текст на текущей странице
-    });
-  }, 500); // Задержка для совпадения с серединой анимации (1s / 2 = 500ms)
 }
 
-function nextPage() {
+function animatePageFlip(page, animationClass) {
+  return new Promise((resolve) => {
+    page.classList.add(animationClass); // Запускаем анимацию переворота
+    setTimeout(() => {
+      resolve(); // Разрешаем промис после завершения анимации
+    }, 1200); // Время анимации (1.2s)
+  });
+}
+
+async function nextPage() {
   if (currentPage < totalPages - 1) {
-    const spread = document.querySelectorAll(".page-spread")[currentPage];
-    const rightPage = spread.querySelector(".right"); // Правая страница
+    const currentSpread = document.querySelectorAll(".page-spread")[currentPage];
+    const rightPage = currentSpread.querySelector(".right"); // Правая страница
 
     // Убираем текст перед анимацией
     rightPage.classList.remove("active");
 
-    // Добавляем класс для переворота влево
-    rightPage.classList.add("flipped-left");
+    // Запускаем анимацию переворота влево
+    await animatePageFlip(rightPage, "flipped-left");
 
-    setTimeout(() => {
-      currentPage++;
-      showCurrentSpread();
-    }, 1000); // Время анимации (1s)
+    // Переходим к следующему развороту
+    currentPage++;
+    showCurrentSpread();
+
+    // Делаем текст видимым на обеих страницах одновременно
+    const activePages = document.querySelectorAll(".page-spread.active .page");
+    activePages.forEach(page => {
+      page.classList.add("active"); // Показываем текст на текущей странице
+    });
   }
 }
 
-function prevPage() {
+async function prevPage() {
   if (currentPage > 0) {
-    const spread = document.querySelectorAll(".page-spread")[currentPage];
-    const leftPage = spread.querySelector(".left"); // Левая страница
+    const currentSpread = document.querySelectorAll(".page-spread")[currentPage];
+    const leftPage = currentSpread.querySelector(".left"); // Левая страница
 
     // Убираем текст перед анимацией
     leftPage.classList.remove("active");
 
-    // Добавляем класс для переворота вправо
-    leftPage.classList.add("flipped-right");
+    // Запускаем анимацию переворота вправо
+    await animatePageFlip(leftPage, "flipped-right");
 
-    setTimeout(() => {
-      currentPage--;
-      showCurrentSpread();
-    }, 1000); // Время анимации (1s)
+    // Переходим к предыдущему развороту
+    currentPage--;
+    showCurrentSpread();
+
+    // Делаем текст видимым на обеих страницах одновременно
+    const activePages = document.querySelectorAll(".page-spread.active .page");
+    activePages.forEach(page => {
+      page.classList.add("active"); // Показываем текст на текущей странице
+    });
   }
 }
 
