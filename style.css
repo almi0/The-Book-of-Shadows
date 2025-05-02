@@ -2,23 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-.book-container {
-    width: 1328px;
-    height: 854px;
-    background-image: url(/image/background-book.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-body {
-    margin: 0;
-    padding: 0;
+  }
+  
+  body {
     background-image: url(/image/background.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -26,53 +12,132 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-.book {
+    overflow: hidden;
+    font-family: sans-serif;
+  }
+  
+  .book-container {
+    perspective: 1200px;
+    width: 1328px;
+    height: 854px;
+    position: relative;
+    overflow: hidden;
+    background-image: url(/image/background-book.png);
+  }
+  
+  .book {
+    width: 1328px;
+    height: 854px;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1200px;
+  }
+  
+  .page-spread {
     width: 1328px;
     height: 854px;
     position: absolute;
     top: 0;
     left: 0;
-    transform-style: preserve-3d;
-    transition: transform 1s ease;
-}
-
-.page {
+    display: none;
+  }
+  
+  .page-spread.active {
+    display: block;
+  }
+  
+  .page {
     width: 664px;
     height: 854px;
     position: absolute;
     top: 0;
-    /* padding: 0px; */
-    /* line-height: 1.5; */
     backface-visibility: hidden;
     box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
-    /* z-index: 1; */
-    transition: transform 1s ease;
-    /* transform-origin: right; */
-}
+    color: white;
+    padding: 20px;
+    transition: transform 1.2s ease, z-index 0s linear;
+    transform-origin: left;
+    transform-origin: center;
+    
+  }
 
-.left {
+  .page h2 {
+    transition-delay: 0.1s; /* Заголовки появляются чуть раньше */
+  }
+
+  .page p {
+    transition-delay: 0.3s; /* Параграфы появляются чуть позже */
+  }
+
+
+  .page > * {
+    position: relative; /* Текст и другие элементы остаются поверх псевдоэлемента */
+    z-index: 1; /* Поднимаем текст над псевдоэлементом */
+    opacity: 0; /* Текст изначально невидим */
+  transform: none; /* Слегка смещаем текст вниз */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Плавное появление */
+
+  }
+
+  .page.active > * {
+    opacity: 1; /* Текст становится видимым */
+    transform: translateY(0); /* Возвращаем текст на место */
+  }
+  
+  .page.left {
     left: 0;
     z-index: 2;
-    transform-origin: right;
     background-image: url(/image/left_page.png);
     background-size: cover;
-    display: block;
-    position: absolute;
-}
+    transform-origin: right;
+  }
 
-.right {
+  .page.flipped-left {
+    transform: rotateY(-180deg); /* Переворот влево */
+    z-index: 10;
+    transform-style: preserve-3d;
+ }
+  
+  .page.right {
     left: 664px;
+    background-image: url(/image/right_page.png);
+    background-size: cover;
     transform-origin: left;
-    /* background-image: url(/image/right_page.png);
-    background-size: cover; */
-    /* z-index: 1; */
-    position: absolute;
-    display: block;
-}
+    transform-style: preserve-3d;
+  }
 
-.click-zone {
+  .page.flipped-right {
+    transform: rotateY(180deg); /* Переворот вправо */
+    z-index: 10; /* Поднимаем страницу поверх остальных */
+  }
+  
+  /* Анимация переворота */
+  .page.flipped {
+    transform: rotateY(180deg);
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    background-size: cover;
+    transform-origin: center;
+    transform: rotateY(0deg);
+    transition: transform 1.5s ease;
+    z-index: -1;
+  }
+
+  
+  
+  
+  
+  .click-zone {
     position: absolute;
     top: 0;
     height: 100%;
@@ -80,12 +145,12 @@ body {
     z-index: 3;
     cursor: pointer;
     background: transparent;
-}
-
-.left-zone{
+  }
+  
+  .left-zone {
     left: 0;
-}
-
-.right-zone{
+  }
+  
+  .right-zone {
     right: 0;
-}
+  }
