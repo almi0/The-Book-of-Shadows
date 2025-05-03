@@ -12,10 +12,10 @@
     <div class="book">
       <!-- Разворот 0 -->
       <div class="page-spread">
-        <div class="page left"><h2>Оглавление</h2>
+        <div class="page left" id="table-of-contents"><h2>Оглавление</h2>
             <ul>
                 <li><a href="#">Предисловие</a></li>
-                <li><a href="#">Оккультизм</a></li>
+                <li><a href="#occultism">Оккультизм</a></li>
                 <li>
                     <a href="#">Астрология</a>
                     <ul>
@@ -25,28 +25,50 @@
                 </li>
                 <li><a href="#">Ведьмовство</a>
                     <ul>
-                        <li><a href="">Виды ведьм</a></li>
-                        <li><a href="">Алтарь ведьм</a></li>
+                        <li><a href="#">Виды ведьм</a></li>
+                        <li><a href="#">Алтарь ведьм</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Сатанизм</a>
                     <ul>
-                        <li><a href="">Направления сатанизма</a></li>
-                        <li><a href="">Символы сатанизма</a></li>
+                        <li><a href="#">Направления сатанизма</a></li>
+                        <li><a href="#">Символы сатанизма</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Статьи</a></li>
             </ul>
         </div>
-        <div class="page right"><h2>Предисловие</h2>
-            <a href="">KKKK</a>
+        <div class="page right" id="preface"><h2>Предисловие</h2>
+            <p>Вы стоите на пороге мира, где реальность переплетается с фантазией, 
+                а прошлое шепчет свои истории тем, кто умеет слушать. Здесь каждая страница — это ключ к дверям, которые лучше не открывать… или все же стоит?
+                Эта книга — собрание тайн, окутанных мраком веков, легенд, рожденных 
+                в глубинах человеческой души, 
+                и загадок, которые, возможно,
+                 вы сможете разгадать. Но будьте осторожны: однажды начав читать, вы рискуете потерять счет времени
+                 и оказаться во власти этих строк.
+                Позвольте словам вести вас. Пролистайте первую страницу —
+                 и узнайте, что скрывается за завесой тайн…</p>
         </div>
       </div>
 
       <!-- Разворот 1 -->
       <div class="page-spread">
-        <div class="page left"><h2>Оккультизм</h2></div>
-        <div class="page right"><h2>История возникновения</h2></div>
+        <div class="page left" id="occultism"><h2>Оккультизм</h2>
+            <p>Оккультизм — это учение о скрытых силах и знаниях, недоступных обычному восприятию, включая магию, алхимию, астрологию и эзотерику. Это путь постижения тайн Вселенной за пределами известной реальности.</p>
+            <div class="The-picture-is-centered" id="Occultism-on-the-first-screen">
+                <img src="./image/Occultism-on-the-first-screen.png" alt="оккультизм">
+            </div>
+        </div>
+        <div class="page right"><h2>Направления</h2>
+            <div id="cards-directions">
+                <div id="card-girection">
+                    <div id="text">
+                        <a href="#">Астрология</a>
+                    </div>
+                    <img src="./image/astrologi-card.png" alt="Астрология">
+                </div>
+            </div>
+        </div>
       </div>
 
       <!-- Разворот 2 -->
@@ -55,12 +77,13 @@
         <div class="page right"><h2>Магия и ритуалы</h2></div>
       </div>
     </div>
+    
 
     <!-- Зоны кликов -->
     <div class="click-zone left-zone" onclick="prevPage()"></div>
     <div class="click-zone right-zone" onclick="nextPage()"></div>
   </div>
 
-  <script src="./script.js" defer></script>
+  <script src="./script.js" ></script>
 </body>
 </html>
