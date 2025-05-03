@@ -62,11 +62,11 @@ async function prevPage() {
 }
 
 // Обработчик кликов по ссылкам
-document.querySelectorAll('.page a').forEach(link => {
-    link.addEventListener('click', function(event) {
-        event.stopPropagation(); // Останавливаем распространение события
-    });
-});
+// document.querySelectorAll('.page a').forEach(link => {
+//     link.addEventListener('click', function(event) {
+//         event.stopPropagation(); // Останавливаем распространение события
+//     });
+// });
 
 // Обработчик кликов по .click-zone
 document.querySelectorAll('.click-zone').forEach(zone => {
@@ -78,6 +78,35 @@ document.querySelectorAll('.click-zone').forEach(zone => {
         }
     });
 });
+
+document.querySelectorAll('.internal-link').forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault(); // отключаем стандартное поведение
+  
+      const targetId = this.getAttribute('href'); // получаем ID цели, например "#chapter2"
+      const targetElement = document.querySelector(targetId); // находим элемент
+      const targetSpread = targetElement.closest('.page-spread'); // находим его .page-spread
+      const spreads = document.querySelectorAll('.page-spread');
+      const targetIndex = Array.from(spreads).indexOf(targetSpread);
+  
+      if (targetIndex === -1 || targetIndex === currentPage) return;
+  
+      // Анимация переворота — можно использовать уже готовую функцию
+      animateToPage(targetIndex);
+    });
+  });
+  
+  async function animateToPage(targetIndex) {
+    const direction = targetIndex > currentPage ? 'next' : 'prev';
+  
+    while (currentPage !== targetIndex) {
+      if (direction === 'next') {
+        await nextPage();
+      } else {
+        await prevPage();
+      }
+    }
+  }
 
 document.addEventListener("DOMContentLoaded", () => {
     showCurrentSpread();

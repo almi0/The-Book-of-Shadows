@@ -49,7 +49,7 @@ body {
 /* класс целого разворота */
 
 .page-spread.active {
-    display: block;
+    display: flex;
 }
 
 .page {
@@ -212,11 +212,18 @@ ul ul {
     top: 0;
     height: 100%;
     width: 150px;
-    z-index: 2;
+    z-index: 1;
     /* cursor: pointer; */
     background: transparent;
     pointer-events: auto;
     background-color: rgba(255, 0, 0, 0.568);
+}
+
+.click-zone a {
+    position: relative;
+    z-index: 10;
+    color: blue;
+    text-decoration: underline;
 }
 
 .The-picture-is-centered{
@@ -229,14 +236,64 @@ ul ul {
     margin-top: 27px;
 }
 
+#cards-directions {
+    margin-top: 67px;
+}
 
-#card-girection{
+
+.card-girection{
     position: relative;
     display: inline-block;
 }
 
 #text{
     position: absolute;
-    top: 50%; left: 50%; 
+    top: -20px; left: 50%; 
     transform: translate(-50%, -50%);
 }
+
+#astrologi-card-gitection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#two-cards-witchcraft-and-satanizm {
+    margin-top: 58px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#witchcraft-card-gitection{
+    margin-left: 74px;
+}
+
+#satanizm-card-gitection{
+    margin-right: 74px;
+}
+
+.the-pattern-for-the-section-pages{
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-for-the-section-pages{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    
+}
+
+/* position: absolute;
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%); */  
+    /* текст по верх картинки */
+
+
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    выравнивание по центру только div */
