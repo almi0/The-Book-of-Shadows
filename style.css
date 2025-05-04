@@ -228,7 +228,7 @@ ul ul {
     /* cursor: pointer; */
     background: transparent;
     pointer-events: auto;
-    background-color: rgba(255, 0, 0, 0.568);
+    /* background-color: rgba(255, 0, 0, 0.568); */
 }
 
 .click-zone a {
@@ -406,6 +406,136 @@ ul ul {
     justify-content: center;
     margin-top: 25px;
     margin-right: 40px;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.zogolovok-witches{
+    font-size: 32px;
+    color: #5D0F24;
+    margin-top: 20px;
+}
+
+.compress-text{
+    width: 440px;
+    margin-left: 0;
+    position: absolute;
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%);
+    margin-top: 13px;
+}
+
+#img-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+#stixui-text{
+    margin-top: 44px;
+}
+
+
+/* #napravlenia-satanizm{
+    width: 520px;
+    text-align: justify;
+    text-align: center;
+} */
+
+.title-napravlenia-satanizm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #5D0F24;
+}
+
+.text-napravlenia-satanizm{
+    width: 520px;
+    text-align: justify;
+    text-align: center;
+    margin-left: 75px;
+}
+
+#img-center-satanizm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    margin-right: 10px;
+}
+
+#card-simble{
+    text-align: justify;
+    text-align: center;
+}
+
+#cards-simble{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    display: block;
+    margin-left: 100px;
+    width: 420px;
+    margin-top: 60px;
+}
+
+#card-simble{
+    display: inline-block;
+    text-align: center;
+    margin-left: 30px;
+    margin-bottom: 80px;
+}
+
+#text-simble{
+    font-size: 28px;
+    display: block;
+}
+
+#img-center-simble{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.title-text-simble{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #5D0F24;
+}
+
+.img-simble{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.text-socr{
+    margin-top: 50px;
+    width: 480px;
+    font-size: 28px;
+}
+
+.link-articles{
+    margin-bottom: 70px;
+    margin-top: 20px;
+}
+
+#img-stat{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 17px;
 }
 
 /* position: absolute;
