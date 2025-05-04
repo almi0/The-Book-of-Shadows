@@ -78,16 +78,28 @@ h2 {
 
 p {
     transition-delay: 0.3s;
-    /* Параграфы появляются чуть позже */
     transition: opacity 0.8s ease, transform 0.8s ease;
     transition-delay: 0.4s;
-    /* margin-left: 20px; */
     font-size: 26px;
-    text-align: center;
-    margin-left: 80px;
-    margin-right: 85px;
     margin-top: 31px;
     color: #333333;
+}
+.align-to-the-left-edge-left{
+    text-align: left;
+    margin-right: 33px;
+    margin-left: 80px;
+}
+
+.align-to-the-left-edge-right{
+    text-align: left;
+    margin-right: 63px;
+    margin-left: 50px;
+}
+
+.the-text-is-centered {
+    text-align: center;
+    margin-left: 60px;
+    margin-right: 81px;
 }
 
 
@@ -277,14 +289,123 @@ ul ul {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    /* display: inline-block; */
 }
 
 .text-for-the-section-pages{
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 644px;
+}
+
+#text-12-zodiac-signs-in-total{
+    margin-top: 86px;
+}
+
+.element-cards{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    margin-top: 28px;
+}
     
+.element-card{
+    float: left;
+    width: 220px;
+    display: flex;
+    margin-bottom: 36px;
+    margin-left: 37px;
+}
+
+#element-text{
+    margin-left: 19px;
+    align-content: center;
+}
+
+#img-the-circle-of-zodiac-signs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 37px;
+    margin-top: 31px;
+}
+
+.links-in-the-elements-block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#text-link-of-zodiac-signs{
+    font-size: 34px;
+    display: inline-block;
+    white-space: nowrap;
+    text-align: justify;
+    margin: 35px;
+}
+
+
+.cards-link-zodiac-signs{
+    display: flex;
+    margin-left: 50px;
+}
+
+.cards-link-zodiac-signs-right{
+    display: flex;
+
+}
+
+.two-cards-link-zodiac-signs{
+    margin-left: 35px;
+}
+
+.card-link-zodiac-sign{
+    /* display: inline; */
+    text-align: justify;
+    text-align: center;
+    margin-bottom: 53px;
+}
+
+#the-name-of-the-zodiac-signs{
+    font-size: 32px;
+    margin-bottom: 7px;
+}
+
+#date-the-zodiac-signs{
+    margin-top: 7px;
+}
+
+#date-znaki-zodiaka{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+#zodiac-sign-pattern{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#the-text-is-centered{
+    position: absolute;
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+#img-infa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    margin-right: 40px;
 }
 
 /* position: absolute;
@@ -297,3 +418,9 @@ ul ul {
     align-items: center;
     justify-content: center;
     выравнивание по центру только div */
+
+
+
+    /* text-align: justify;
+    text-align: center;
+    выравнить текст под текстом */
